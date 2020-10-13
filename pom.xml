@@ -14,9 +14,9 @@
     <name>db</name>
     <description>Online data base project</description>
 
-    <properties>
-        <java.version>11</java.version>
-    </properties>
+<!--    <properties>-->
+<!--        <java.version>11</java.version>-->
+<!--    </properties>-->
 
     <dependencies>
         <dependency>
