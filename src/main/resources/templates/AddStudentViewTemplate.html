@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link th:href="@{/MainViewCss.css}" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Add student</title>
+</head>
+<body>
+
+<div class="jumbotron text-center bg-light">
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+
+        <!-- Links -->
+        <ul class="navbar-nav active">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/allStudents}">List of all students</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/removeAllStudents}">Remove all students</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <div class="container">
+
+    <h2>Welcome in this simple student data base</h2>
+    <h4>Below you can find form to add new student</h4>
+    <h4>or get data from student data base</h4>
+
+    </div>
+</div>
+
+
+<div class="container bg-light">
+
+        <!--Gdzie ma zostać przekierowany użytkownik-->
+        <form action="#" th:action="@{/studentAdded}" th:object="${student}" method="post">
+    <div class="form-group">
+            <p>Name: <input class="form-control" type="text" th:field="*{name}" /></p>
+    </div>
+        <div class="form-group">
+            <p>Phone: <input class="form-control" type="tel" th:field="*{phone}" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" placeholder="000-000-000"/></p>
+        </div>
+        <div class="form-group">
+            <p>Email: <input class="form-control" th:field="*{email}" type="email" placeholder="example@example.com"/></p>
+        </div>
+            <p><input class="btn btn-dark" type="submit" value="Add student" /> <input class="btn btn-dark" type="reset" value="Clear form"/></p>
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
